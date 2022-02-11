@@ -1,0 +1,56 @@
+﻿@page
+@model AllDentistsModel
+@{
+    ViewData["Title"] = "Edit Dentists";
+}
+<a type="button" class="btn btn-secondary" href="/Identity/Account/Manage">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+    </svg>
+</a>
+<br>
+<br>
+<h4 class="text-center">@ViewData["Title"]</h4>
+<div class="text-end">
+    <a class="btn btn-sm btn-dark" href="/Moderator/Dentists/CreateDentist">Add Dentist</a>
+    <a class="btn btn-sm btn-dark" href="/Moderator/Procedures/AllProcedures">Procedures List</a>
+
+</div>
+<br>
+<br>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>DentistName</td>
+            <td>Age</td>
+            <td>Email</td>
+            <td>Procedure</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.DentistList)
+        {
+        <tr>
+            <td>@item.DentistID</td>
+            <td>@item.DentistName</td>
+            <td>@item.Age</td>
+            <td>@item.Email</td>
+            <td>
+                <form asp-route-id="@item.DentistID" method="post">
+                    <button type="submit" class="btn btn-sm btn-dark" asp-page="./EditDentist">
+                        Edit
+                    </button>
+                    <a asp-page="./AllDentists" class="btn btn-sm btn-danger" onclick="return confirm
+                        ('Are you sure you want to delete this item?');"
+                            asp-page-handler="Delete" asp-route-id="@item.DentistID">
+                        Delete
+                    </a>
+                </form>
+            </td>
+        </tr>
+
+        }
+    </tbody>
+</table>

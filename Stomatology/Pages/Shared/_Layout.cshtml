@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    @{Html.RenderPartialAsync("_MetaHead.cshtml");}
+<body>
+
+    @{Html.RenderPartialAsync("_Header.cshtml");}
+    <br>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    @{
+        Html.RenderPartialAsync("_Footer.cshtml");
+        Html.RenderPartialAsync("_Scripts.cshtml");
+    }
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

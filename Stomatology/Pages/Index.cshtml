@@ -1,0 +1,37 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container py-4">
+    <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">Bine ați venit la Stomatologie</h1>
+                <br>
+                <a class="btn btn-primary btn-lg" href="/Forms/Record">Book a dentist</a>
+        </div>
+    </div>
+
+    <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+            <div class="h-100 p-5 text-white bg-dark rounded-3">
+                <h2>Despre echipă</h2>
+                <p>
+                    Noi știm că pentru a-i face pe pacienții noștri fericiți trebuie să le asigurăm o asistență stomatologică impecabilă. Din acest motiv suntem foarte atenți la calitățile profesionale și umane ale doctorilor noștri. Ce îi face atât de deosebiți? Experiența vastă în domeniul în care activează, completată de un proces continuu de învățare.
+                    Personalul nostru medical este avid de noi cunoștințe. Fiecare doctor, pe lângă studiile excelente la facultate, este în permanență încadrat în programe de instruiri în țară și peste hotare. Orice noutate din domeniul nostru profesional ne inspiră și ne determină să studiem mai mult.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="h-100 p-5 bg-light border rounded-3">
+                <h2>Servicii</h2>
+                <p>
+                    Suntem o clinică stomatologică deschisă în 2013. O echipă de medici profesioniști și dedicați, care nu încetează nici pentru o zi să studieze și să se perfecționeze. Suntem echipa care crede cu tot dinadinsul că există pentru a face pacienții fericiți.
+                    De ce anume fericiți? Pentru că noi știm cum să tratăm fiecare pacient în parte ca pe un bun prieten. Pentru că aici prietenii noștri nu doar își tratează dantura. Ei pleacă de la noi cu dinți sănătoși, cu zâmbete frumoase și cu emoții pozitive.
+                </p>
+                <a class="btn btn-outline-dark" asp-area="" asp-page="/Services">Informatii</a>
+            </div>
+        </div>
+    </div>
+</div>
